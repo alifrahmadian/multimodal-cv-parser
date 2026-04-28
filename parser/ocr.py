@@ -5,7 +5,7 @@ import numpy as np
 import fitz
 
 def pdf_to_text(path):
-    doc = fitz.open(path)
+    doc = fitz.open(str(path))
     text = ""
     for page in doc:
         pix = page.get_pixmap()

@@ -4,10 +4,13 @@ import json
 from parser.ocr import extract_text          # Step 2-3
 from parser.llm_parser import parse_cv       # Step 4
 from parser.validator import validate_and_format  # Step 5
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def process_cv(file):
     # Step 2-3: Ekstrak teks dari file
-    text = extract_text(file.name)
+    text = extract_text(file)
 
     # Step 4: Parse dengan LLM
     raw_json = parse_cv(text)
